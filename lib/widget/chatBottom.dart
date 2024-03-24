@@ -11,7 +11,7 @@ class ChatBottom extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.all(5),
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
@@ -23,7 +23,7 @@ class ChatBottom extends StatelessWidget {
                   color: Colors.black38,
                   size: 30,
                 ),
-           
+            SizedBox(width: 5,),
                 Container(
                   width: 200,
                   child: TextFormField(

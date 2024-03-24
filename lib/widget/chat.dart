@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/page/chat.dart';
 
 class ChatWidget extends StatelessWidget {
   ChatWidget({super.key});
 
-  final List<String> names = [
+  final List<String> users = [
     "Alice",
     "Bob",
     "Charlie",
@@ -15,7 +16,22 @@ class ChatWidget extends StatelessWidget {
     "Isaac",
     "Julia",
     "Kevin",
-    "Lily",
+    "Lily"
+  ];
+
+  final List<String> avatar = [
+    'https://i.pravatar.cc/100?user=0',
+    'https://i.pravatar.cc/100?user=1',
+    'https://i.pravatar.cc/100?user=2',
+    'https://i.pravatar.cc/100?user=3',
+    'https://i.pravatar.cc/100?user=4',
+    'https://i.pravatar.cc/100?user=5',
+    'https://i.pravatar.cc/100?user=6',
+    'https://i.pravatar.cc/100?user=7',
+    'https://i.pravatar.cc/100?user=8',
+    'https://i.pravatar.cc/100?user=9',
+    'https://i.pravatar.cc/100?user=10',
+    'https://i.pravatar.cc/100?user=11'
   ];
 
   @override
@@ -23,24 +39,23 @@ class ChatWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          for (int i = 1; i < names.length; i++)
+          for (int i = 1; i < users.length; i++)
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, "chatPage");
+                Navigator.pushNamed(context, "chatPage",
+                    arguments: {"selectedUser": users[i], "avatar": avatar[i]});
               },
               child: Container(
                 margin: EdgeInsets.symmetric(vertical: 12),
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundImage:
-                        NetworkImage('https://i.pravatar.cc/100?user=$i'),
+                    backgroundImage: NetworkImage(avatar[i]),
                   ),
                   title: Text(
-                    names[i],
+                    users[i],
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  subtitle:
-                      Text("Hi, Altaf, pekerjaan mu sangat memuaskan"),
+                  subtitle: Text("Hi, Altaf, pekerjaan mu sangat memuaskan"),
                   trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,

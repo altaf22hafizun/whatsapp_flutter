@@ -3,6 +3,11 @@ import 'package:whatsapp_clone/widget/chatBottom.dart';
 import 'package:whatsapp_clone/widget/chatSample.dart';
 
 class ChatPage extends StatelessWidget {
+  final String selectedUser;
+  final String avatar;
+
+  ChatPage({required this.selectedUser, required this.avatar});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +36,7 @@ class ChatPage extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Image(
-                    image: NetworkImage('https://i.pravatar.cc/100?user='),
+                    image: NetworkImage(avatar),
                     height: 45,
                     width: 45,
                   ),
@@ -42,7 +47,7 @@ class ChatPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Programmer",
+                        selectedUser,
                         style: TextStyle(
                           fontSize: 18,
                         ),

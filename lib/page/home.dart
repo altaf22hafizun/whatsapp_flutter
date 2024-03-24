@@ -111,13 +111,13 @@ class HomePage extends StatelessWidget {
                 ),
                 tabs: [
                   Container(
-                    width: 35,
+                    width: 25,
                     child: Tab(
                       icon: Icon(Icons.group_rounded),
                     ),
                   ),
                   Container(
-                    width: 100,
+                    width: 80,
                     child: Tab(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -148,13 +148,13 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 90,
+                    width: 80,
                     child: Tab(
                       child: Text("Pembaruan"),
                     ),
                   ),
                   Container(
-                    width: 90,
+                    width: 80,
                     child: Tab(
                       child: Text("Panggilan"),
                     ),
